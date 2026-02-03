@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Green Gourmet | Indulgent Flavor Atelier</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-green: #2e7d32;
+            --light-green: #4caf50;
+            --dark-green: #1b5e20;
+            --pale-green: #e8f5e9;
+            --accent-gold: #ffb300;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --off-white: #f9f9f9;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            background-color: var(--off-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-green);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo i {
+            font-size: 2.2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary-green);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-green);
+            left: 0;
+            bottom: 0;
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .search-cart {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-cart i {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .search-cart i:hover {
+            color: var(--primary-green);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-green);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(46, 125, 50, 0.85), rgba(46, 125, 50, 0.9)), url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            color: var(--dark-green);
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent-gold);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+        }
+
+        .contact-info {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info h2 {
+            color: var(--dark-green);
+            margin-bottom: 25px;
+            font-size: 2rem;
+        }
+
+        .contact-info p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .contact-details {
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            background-color: var(--pale-green);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--primary-green);
+            font-size: 1.2rem;
+        }
+
+        .contact-text h3 {
+            color: var(--dark-green);
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+
+        .contact-text p {
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: var(--pale-green);
+            border-radius: 50%;
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-green);
+            color: var(--white);
+            transform: translateY(-5px);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form h2 {
+            color: var(--dark-green);
+            margin-bottom: 25px;
+            font-size: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary-green);
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: var(--white);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #ffa000;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-block {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 80px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: var(--pale-green);
+        }
+
+        .faq-question h3 {
+            color: var(--dark-green);
+            font-size: 1.3rem;
+        }
+
+        .faq-question i {
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s;
+        }
+
+        .faq-answer p {
+            color: var(--text-light);
+            padding-bottom: 25px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Map Section */
+        .map-section {
+            margin-bottom: 80px;
+        }
+
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 400px;
+        }
+
+        .map-placeholder {
+            background-color: var(--pale-green);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-green);
+        }
+
+        .map-placeholder i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .map-placeholder h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 70px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-gold);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        .contact-info-footer p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sweet-dishes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .sweet-dish-img {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 120px;
+        }
+
+        .sweet-dish-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .sweet-dish-img:hover img {
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .search-cart {
+                margin-left: auto;
+                margin-right: 20px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sweet-dishes {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .page-header {
+                padding: 60px 0;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .page-header p {
+                font-size: 1.1rem;
+            }
+            
+            .contact-info, .contact-form {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>Green Gourmet</span>
+            </div>
+            
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="terms.html">Terms Of Privacy</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="cookies.html">Cookies Policy</a></li>
+                </ul>
+            </nav>
+            
+            <div class="search-cart">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-shopping-basket"></i>
+                <div class="mobile-menu-btn" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Get in Touch With Green Gourmet</h1>
+            <p>Have questions about our recipes, sustainability practices, or want to collaborate? We'd love to hear from you. Our team is dedicated to helping you on your green culinary journey.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Let's Connect</h2>
+                    <p>We're passionate about sustainable cooking and love connecting with fellow food enthusiasts. Whether you have a question about a recipe, want to suggest a collaboration, or just want to share your green cooking journey, we're here to listen.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Our Location</h3>
+                                <p>123 Sustainable Street, Greenville, CA 90210</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Phone Number</h3>
+                                <p>(555) 123-4567</p>
+                                <p>Mon-Fri: 9am-6pm PST</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Email Address</h3>
+                                <p>hello@greengourmet.com</p>
+                                <p>We aim to respond within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="recipe">Recipe Question</option>
+                                <option value="collaboration">Collaboration Inquiry</option>
+                                <option value="feedback">Website Feedback</option>
+                                <option value="technical">Technical Issue</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your inquiry..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-block">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item" id="faq1">
+                    <div class="faq-question">
+                        <h3>How can I adapt your recipes for specific dietary restrictions?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most of our recipes include substitution suggestions for common dietary needs like gluten-free, nut-free, or soy-free. For specific questions about adapting a recipe, feel free to contact us with the recipe name and your dietary requirement, and we'll provide tailored suggestions.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" id="faq2">
+                    <div class="faq-question">
+                        <h3>Can I submit my own plant-based recipe to be featured on Green Gourmet?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We love discovering new plant-forward recipes from our community. Please use the contact form and select "Collaboration Inquiry" as the subject. Include your recipe, a brief story about it, and any photos you may have. If it aligns with our sustainability values and culinary standards, we'd be thrilled to feature it.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" id="faq3">
+                    <div class="faq-question">
+                        <h3>How often do you add new recipes to your collection?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We add new recipes every week, with seasonal collections updated quarterly. Our goal is to continuously expand our 87,000-word recipe library while maintaining our high standards for sustainability, flavor, and culinary innovation. Subscribe to our newsletter to be notified of new additions.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" id="faq4">
+                    <div class="faq-question">
+                        <h3>Do you offer cooking classes or workshops?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We host seasonal virtual cooking workshops focusing on sustainable techniques and plant-forward cuisine. We also occasionally offer in-person classes in the Greenville area. Check our website's events page or contact us to be added to our workshop notification list.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" id="faq5">
+                    <div class="faq-question">
+                        <h3>How do you ensure your recipes are truly sustainable?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Each recipe undergoes a sustainability checklist: seasonal ingredient focus, minimal food waste techniques, plant-forward emphasis, and locally-sourced alternatives. We also provide tips for sourcing ingredients sustainably in your area and adapting recipes based on what's available locally.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Find Us</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Green Gourmet Headquarters</h3>
+                    <p>123 Sustainable Street, Greenville, CA 90210</p>
+                    <p>Open for scheduled visits and workshops</p>
+                </div>
+                <!-- In a real implementation, you would embed a Google Maps iframe here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Green Gourmet</h3>
+                    <p>Indulgent Flavor Atelier - Where sustainability meets culinary artistry. Join us in redefining green cooking with over 87,000 words of original recipe content.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info-footer">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Sustainable Street, Greenville, CA 90210</p>
+                        <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> hello@greengourmet.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9am-6pm PST</p>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#recipes">All Recipes</a></li>
+                        <li><a href="index.html#categories">Recipe Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="terms.html">Terms of Privacy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Sweet Indulgences</h3>
+                    <p>Our best sweet dish creations:</p>
+                    <div class="sweet-dishes">
+                        <div class="sweet-dish-img">
+                            <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Matcha Cheesecake">
+                        </div>
+                        <div class="sweet-dish-img">
+                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Berry Tart">
+                        </div>
+                        <div class="sweet-dish-img">
+                            <img src="https://images.unsplash.com/photo-1519861531473-920034658307?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Chocolate Avocado Mousse">
+                        </div>
+                        <div class="sweet-dish-img">
+                            <img src="https://images.unsplash.com/photo-1519676867240-f03562e64548?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Pistachio Rose Cake">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Green Gourmet | Indulgent Flavor Atelier. All rights reserved. | Over 87,000 words of unique recipe content</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
+                mainNav.classList.remove('active');
+            }
+        });
+        
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real application, you would send this data to a server
+            // For this example, we'll just show a success message
+            alert(`Thank you ${name}! Your message has been sent successfully. We'll respond to you at ${email} within 24 hours.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+        
+        // Highlight active navigation link
+        const currentPage = window.location.pathname.split('/').pop();
+        const navLinks = document.querySelectorAll('nav a');
+        
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

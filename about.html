@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Green Gourmet | Indulgent Flavor Atelier</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-green: #2e7d32;
+            --light-green: #4caf50;
+            --dark-green: #1b5e20;
+            --pale-green: #e8f5e9;
+            --accent-gold: #ffb300;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --off-white: #f9f9f9;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            background-color: var(--off-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-green);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo i {
+            font-size: 2.2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary-green);
+        }
+
+        nav a.active {
+            color: var(--primary-green);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: var(--primary-green);
+            left: 0;
+            bottom: 0;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-green);
+            left: 0;
+            bottom: 0;
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .search-cart {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-cart i {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .search-cart i:hover {
+            color: var(--primary-green);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-green);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(46, 125, 50, 0.85), rgba(46, 125, 50, 0.9)), url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            color: var(--dark-green);
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent-gold);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* About Content */
+        .about-content {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 50px;
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+        }
+
+        .about-content h2 {
+            color: var(--dark-green);
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-content blockquote {
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 25px;
+            margin: 30px 0;
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 1.2rem;
+        }
+
+        .mission-values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .mission-card {
+            background-color: var(--pale-green);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .mission-card i {
+            font-size: 3rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .mission-card h3 {
+            color: var(--dark-green);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Team Section */
+        .team-section {
+            margin-bottom: 80px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .member-img {
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .member-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .team-member:hover .member-img img {
+            transform: scale(1.05);
+        }
+
+        .member-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .member-info h3 {
+            color: var(--dark-green);
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+        }
+
+        .member-info p.position {
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .member-info p.bio {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .member-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--pale-green);
+            border-radius: 50%;
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .member-social a:hover {
+            background-color: var(--primary-green);
+            color: var(--white);
+            transform: translateY(-5px);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background-color: var(--pale-green);
+            padding: 80px 0;
+            margin-bottom: 80px;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Timeline */
+        .timeline-section {
+            margin-bottom: 80px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--light-green);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--white);
+            top: 30px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 0 4px var(--light-green);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: -10px;
+            background-color: var(--white);
+            top: 30px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 0 4px var(--light-green);
+        }
+
+        .timeline-content h3 {
+            color: var(--dark-green);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background-color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 80px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .newsletter h2 {
+            color: var(--dark-green);
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: var(--text-light);
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+
+        .newsletter-form input:focus {
+            border-color: var(--primary-green);
+            outline: none;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: var(--white);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #ffa000;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 70px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-gold);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sweet-dishes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .sweet-dish-img {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 120px;
+        }
+
+        .sweet-dish-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .sweet-dish-img:hover img {
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: 21px;
+                right: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .search-cart {
+                margin-left: auto;
+                margin-right: 20px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sweet-dishes {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .page-header {
+                padding: 70px 0;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .page-header p {
+                font-size: 1.1rem;
+            }
+            
+            .mission-values {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>Green Gourmet</span>
+            </div>
+            
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms Of Privacy</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="cookies.html">Cookies Policy</a></li>
+                </ul>
+            </nav>
+            
+            <div class="search-cart">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-shopping-basket"></i>
+                <div class="mobile-menu-btn" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Story & Philosophy</h1>
+            <p>Discover the journey, values, and passionate team behind Green Gourmet's Indulgent Flavor Atelier</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="container">
+        <div class="about-content">
+            <h2>Crafting a Greener Culinary Future</h2>
+            <p>Founded in 2018, Green Gourmet began as a simple blog documenting one chef's journey toward sustainable cooking. What started as a personal exploration of plant-forward cuisine has blossomed into a comprehensive culinary resource with over 87,000 words of original recipes, techniques, and food philosophy.</p>
+            
+            <blockquote>"Food should be a celebration of nature's bounty, not a burden on our planet. Every meal is an opportunity to nourish both body and Earth."</blockquote>
+            
+            <p>Our Indulgent Flavor Atelier represents the culmination of years of experimentation, research, and collaboration with farmers, nutritionists, and sustainability experts. We believe that exceptional flavor need not come at the expense of environmental responsibility.</p>
+            
+            <p>Each recipe in our collection undergoes rigorous testing to ensure it meets our three core criteria: exceptional taste, nutritional value, and minimal environmental impact. We prioritize seasonal ingredients, support local farmers practicing regenerative agriculture, and develop techniques that minimize food waste.</p>
+            
+            <h2>Our Mission & Values</h2>
+            
+            <div class="mission-values">
+                <div class="mission-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Sustainability First</h3>
+                    <p>We design recipes with a closed-loop philosophy, utilizing whole ingredients and minimizing waste from farm to fork.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Culinary Excellence</h3>
+                    <p>Plant-forward doesn't mean compromise. We innovate with techniques that elevate vegetables to center stage.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Education & Accessibility</h3>
+                    <p>We democratize sustainable cooking through detailed guides, tutorials, and approachable recipes for all skill levels.</p>
+                </div>
+            </div>
+            
+            <p>Beyond recipes, Green Gourmet serves as an educational platform. Our extensive library includes seasonal buying guides, preservation techniques, and deep dives into ingredients' environmental footprints. We're committed to transparency about our sourcing and the science behind our methods.</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="section-title">Our Impact in Numbers</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">87K+</div>
+                    <div class="stat-label">Words of Recipe Content</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Tested Recipes</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">42</div>
+                    <div class="stat-label">Local Farms Supported</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5M+</div>
+                    <div class="stat-label">Meals Inspired</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="container team-section">
+        <h2 class="section-title">Meet Our Culinary Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-img">
+                    <img src="https://images.unsplash.com/photo-1595475207225-428b62bda831?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Chef Elena Rodriguez">
+                </div>
+                <div class="member-info">
+                    <h3>Elena Rodriguez</h3>
+                    <p class="position">Founder & Executive Chef</p>
+                    <p class="bio">Formerly of Noma and Chez Panisse, Elena brings 15 years of experience reimagining plant-based cuisine with global influences.</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-img">
+                    <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Marcus Chen">
+                </div>
+                <div class="member-info">
+                    <h3>Marcus Chen</h3>
+                    <p class="position">Sustainability Director</p>
+                    <p class="bio">With a PhD in Environmental Science, Marcus ensures our recipes align with regenerative agriculture and circular food systems.</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fas fa-globe"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-img">
+                    <img src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sophie Williams">
+                </div>
+                <div class="member-info">
+                    <h3>Sophie Williams</h3>
+                    <p class="position">Recipe Developer</p>
+                    <p class="bio">Trained in Paris and Kyoto, Sophie specializes in fermentation and preservation techniques that extend seasonal abundance.</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fas fa-globe"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-img">
+                    <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="David Park">
+                </div>
+                <div class="member-info">
+                    <h3>David Park</h3>
+                    <p class="position">Photography & Styling</p>
+                    <p class="bio">David's lens captures the vibrant beauty of sustainable ingredients, making every recipe visually irresistible.</p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                        <a href="#"><i class="fas fa-globe"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="container timeline-section">
+        <h2 class="section-title">Our Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2018</div>
+                    <h3>Green Gourmet Begins</h3>
+                    <p>Elena starts a blog documenting her journey toward sustainable cooking, featuring 30 original plant-based recipes.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2019</div>
+                    <h3>First Cookbook Published</h3>
+                    <p>"Seasonal Plates" releases, featuring 100 recipes and wins the Sustainable Food Media Award.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2020</div>
+                    <h3>Team Expansion</h3>
+                    <p>Marcus and Sophie join, bringing expertise in sustainability and fermentation. Recipe count surpasses 300.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2021</div>
+                    <h3>Indulgent Flavor Atelier Launch</h3>
+                    <p>Our comprehensive platform launches with 500+ recipes, tutorials, and the 87,000-word culinary guide.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2022</div>
+                    <h3>Farm Partnership Program</h3>
+                    <p>We establish direct relationships with 42 regenerative farms across North America and Europe.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2023</div>
+                    <h3>Global Community</h3>
+                    <p>Green Gourmet reaches over 5 million home cooks worldwide with our sustainable cooking philosophy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="container newsletter">
+        <h2>Join Our Culinary Movement</h2>
+        <p>Subscribe to receive weekly recipes, seasonal guides, and exclusive insights from our Indulgent Flavor Atelier. Be part of our growing community of 250,000+ sustainable food enthusiasts.</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit" class="btn">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Green Gourmet</h3>
+                    <p>Indulgent Flavor Atelier - Where sustainability meets culinary artistry. Join us in redefining green cooking with over 87,000 words of original recipe content.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Sustainable Street, Greenville, CA 90210</p>
+                        <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> hello@greengourmet.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9am-6pm PST</p>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#recipes">All Recipes</a></li>
+                        <li><a href="#">Seasonal Guides</a></li>
+                        <li><a href="#">Cooking Techniques</a></li>
+                        <li><a href="#">Sustainability Tips</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Sweet Indulgences</h3>
+                    <p>Our best sweet dish creations:</p>
+                    <div class="sweet-dishes">
+                        <div class="sweet-dish-img">
+                            <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Matcha Cheesecake">
+                        </div>
+                        <div class="sweet-dish-img">
+                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Berry Tart">
+                        </div>
+                        <div class="sweet-dish-img">
+                            <img src="https://images.unsplash.com/photo-1519861531473-920034658307?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Chocolate Avocado Mousse">
+                        </div>
+                        <div class="sweet-dish-img">
+                            <img src="https://images.unsplash.com/photo-1519676867240-f03562e64548?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Pistachio Rose Cake">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Green Gourmet | Indulgent Flavor Atelier. All rights reserved. | Over 87,000 words of unique recipe content</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
+                mainNav.classList.remove('active');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    // Close mobile menu if open
+                    mainNav.classList.remove('active');
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = this.querySelector('input[type="email"]');
+            if(emailInput.value) {
+                alert('Thank you for subscribing to the Green Gourmet newsletter!');
+                emailInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>

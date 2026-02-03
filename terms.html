@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Privacy | Green Gourmet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-green: #2e7d32;
+            --light-green: #4caf50;
+            --dark-green: #1b5e20;
+            --pale-green: #e8f5e9;
+            --accent-gold: #ffb300;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --off-white: #f9f9f9;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            background-color: var(--off-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-green);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo i {
+            font-size: 2.2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary-green);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-green);
+            left: 0;
+            bottom: 0;
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-green);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(46, 125, 50, 0.9), rgba(46, 125, 50, 0.95)), url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Policy Navigation */
+        .policy-nav {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            position: sticky;
+            top: 100px;
+            z-index: 10;
+        }
+
+        .policy-nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .policy-nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .policy-nav a:hover, .policy-nav a.active {
+            background-color: var(--primary-green);
+            color: var(--white);
+        }
+
+        /* Content Sections */
+        .policy-content {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 50px;
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            color: var(--dark-green);
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--accent-gold);
+        }
+
+        .subsection-title {
+            color: var(--primary-green);
+            font-size: 1.6rem;
+            margin: 30px 0 15px;
+        }
+
+        .policy-content p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .policy-content ul, .policy-content ol {
+            margin-bottom: 25px;
+            padding-left: 30px;
+            color: var(--text-light);
+        }
+
+        .policy-content li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .highlight-box {
+            background-color: var(--pale-green);
+            border-left: 5px solid var(--accent-gold);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: var(--pale-green);
+            color: var(--dark-green);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--pale-green);
+            padding: 60px;
+            border-radius: 10px;
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: var(--dark-green);
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-section p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: var(--text-light);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+
+        .contact-item i {
+            color: var(--primary-green);
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 70px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-gold);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .policy-content {
+                padding: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .policy-nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .policy-nav a {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .policy-content {
+                padding: 30px 20px;
+            }
+            
+            .contact-section {
+                padding: 40px 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>Green Gourmet</span>
+            </div>
+            
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html" class="active">Terms Of Privacy</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+					<li><a href="cookies.html">Cookies Policy</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-menu-btn" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Terms of Service & Privacy</h1>
+            <p>Understanding how we protect your privacy and govern the use of our website and content</p>
+        </div>
+    </section>
+
+    <!-- Policy Navigation -->
+    <div class="container">
+        <div class="policy-nav">
+            <ul>
+                <li><a href="#terms" class="active">Terms of Service</a></li>
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#cookies">Cookies Policy</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Terms of Service -->
+    <section class="container policy-content" id="terms">
+        <h2 class="section-title">Terms of Service</h2>
+        
+        <div class="highlight-box">
+            <p>Last Updated: January 15, 2023. By accessing and using Green Gourmet, you agree to these Terms of Service.</p>
+        </div>
+        
+        <h3 class="subsection-title">1. Acceptance of Terms</h3>
+        <p>Welcome to Green Gourmet ("Website", "we", "us", or "our"). These Terms of Service govern your use of our website located at greengourmet.com and our services. By accessing or using our Website, you agree to be bound by these Terms. If you disagree with any part of the terms, you may not access the Website.</p>
+        
+        <h3 class="subsection-title">2. Use of Content</h3>
+        <p>All content on this Website, including but not limited to text, graphics, images, recipes, cooking instructions, and other material (collectively, the "Content") is owned by Green Gourmet or its content suppliers and is protected by copyright and other intellectual property laws.</p>
+        
+        <p>You may:</p>
+        <ul>
+            <li>Access and view the Content for personal, non-commercial use</li>
+            <li>Share recipes with friends and family, giving proper attribution to Green Gourmet</li>
+            <li>Print reasonable portions of Content for personal use</li>
+        </ul>
+        
+        <p>You may not:</p>
+        <ul>
+            <li>Republish, sell, rent, or sub-license Content from this Website</li>
+            <li>Reproduce, duplicate, or copy Content for commercial purposes</li>
+            <li>Modify or create derivative works from the Content</li>
+            <li>Redistribute Content from this Website (except for content specifically made for redistribution)</li>
+        </ul>
+        
+        <h3 class="subsection-title">3. User Contributions</h3>
+        <p>Users may have the opportunity to post comments, reviews, or other content. By posting content, you grant us a non-exclusive, royalty-free, perpetual, and worldwide license to use, modify, publicly display, reproduce, and distribute such content on our Website and affiliated publications.</p>
+        
+        <p>You agree not to post content that:</p>
+        <ul>
+            <li>Is unlawful, threatening, defamatory, obscene, or invasive of privacy</li>
+            <li>Infringes any patent, trademark, trade secret, copyright, or other proprietary rights</li>
+            <li>Contains software viruses or any other computer code designed to interrupt, destroy, or limit the functionality of any computer software or hardware</li>
+            <li>Constitutes unauthorized or unsolicited advertising, "spam", or chain letters</li>
+        </ul>
+        
+        <h3 class="subsection-title">4. Health and Safety Disclaimer</h3>
+        <p>The recipes, cooking instructions, and nutritional information provided on Green Gourmet are for informational purposes only. We are not medical professionals, and the information provided should not be considered medical or nutritional advice.</p>
+        
+        <p>Always:</p>
+        <ul>
+            <li>Consult with a healthcare professional before making significant changes to your diet</li>
+            <li>Check for food allergies before preparing or consuming any recipe</li>
+            <li>Follow proper food safety and handling procedures</li>
+            <li>Cook meats and other perishable items to safe internal temperatures</li>
+        </ul>
+        
+        <h3 class="subsection-title">5. Limitation of Liability</h3>
+        <p>To the fullest extent permitted by applicable law, Green Gourmet shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from:</p>
+        
+        <ul>
+            <li>Your access to or use of or inability to access or use the Website</li>
+            <li>Any conduct or content of any third party on the Website</li>
+            <li>Any content obtained from the Website</li>
+            <li>Unauthorized access, use, or alteration of your transmissions or content</li>
+        </ul>
+        
+        <h3 class="subsection-title">6. Modifications to Terms</h3>
+        <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+    </section>
+
+    <!-- Privacy Policy -->
+    <section class="container policy-content" id="privacy">
+        <h2 class="section-title">Privacy Policy</h2>
+        
+        <div class="highlight-box">
+            <p>Your privacy is important to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.</p>
+        </div>
+        
+        <h3 class="subsection-title">1. Information We Collect</h3>
+        <p>We collect several types of information from and about users of our Website, including:</p>
+        
+        <h4>Personal Data</h4>
+        <p>While using our Website, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to:</p>
+        <ul>
+            <li>Email address</li>
+            <li>First name and last name</li>
+            <li>Cookies and Usage Data</li>
+        </ul>
+        
+        <h4>Usage Data</h4>
+        <p>We may also collect information on how the Website is accessed and used. This Usage Data may include information such as your computer's Internet Protocol address, browser type, browser version, the pages of our Website that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers, and other diagnostic data.</p>
+        
+        <h3 class="subsection-title">2. How We Use Your Information</h3>
+        <p>We use the collected data for various purposes:</p>
+        <ul>
+            <li>To provide and maintain our Website</li>
+            <li>To notify you about changes to our Website</li>
+            <li>To allow you to participate in interactive features of our Website when you choose to do so</li>
+            <li>To provide customer support</li>
+            <li>To gather analysis or valuable information so that we can improve our Website</li>
+            <li>To monitor the usage of our Website</li>
+            <li>To detect, prevent and address technical issues</li>
+            <li>To provide you with news, special offers, and general information about other goods, services, and events which we offer that are similar to those that you have already purchased or enquired about unless you have opted not to receive such information</li>
+        </ul>
+        
+        <h3 class="subsection-title">3. Data Sharing and Disclosure</h3>
+        <p>We may share your personal information in the following situations:</p>
+        
+        <ul>
+            <li><strong>With Service Providers:</strong> We may share your personal information with Service Providers to monitor and analyze the use of our Website, to show advertisements to you, or to contact you.</li>
+            <li><strong>For Business Transfers:</strong> We may share or transfer your personal information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</li>
+            <li><strong>With Affiliates:</strong> We may share your information with our affiliates, in which case we will require those affiliates to honor this Privacy Policy.</li>
+            <li><strong>With Your Consent:</strong> We may disclose your personal information for any other purpose with your consent.</li>
+        </ul>
+        
+        <h3 class="subsection-title">4. Data Security</h3>
+        <p>The security of your data is important to us but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
+        
+        <h3 class="subsection-title">5. Your Data Protection Rights</h3>
+        <p>Depending on your location, you may have the following data protection rights:</p>
+        
+        <ul>
+            <li><strong>The right to access</strong> – You have the right to request copies of your personal data.</li>
+            <li><strong>The right to rectification</strong> – You have the right to request that we correct any information you believe is inaccurate or complete information you believe is incomplete.</li>
+            <li><strong>The right to erasure</strong> – You have the right to request that we erase your personal data, under certain conditions.</li>
+            <li><strong>The right to restrict processing</strong> – You have the right to request that we restrict the processing of your personal data, under certain conditions.</li>
+            <li><strong>The right to object to processing</strong> – You have the right to object to our processing of your personal data, under certain conditions.</li>
+            <li><strong>The right to data portability</strong> – You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.</li>
+        </ul>
+        
+        <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us using the information provided in the Contact section.</p>
+    </section>
+
+    <!-- Cookies Policy -->
+    <section class="container policy-content" id="cookies">
+        <h2 class="section-title">Cookies Policy</h2>
+        
+        <div class="highlight-box">
+            <p>This Cookies Policy explains what cookies are, how we use them, and your choices regarding cookies.</p>
+        </div>
+        
+        <h3 class="subsection-title">What Are Cookies</h3>
+        <p>Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently and provide information to the website owners.</p>
+        
+        <p>Cookies set by the website owner are called "first-party cookies". Cookies set by parties other than the website owner are called "third-party cookies". Third-party cookies enable third-party features or functionality to be provided on or through the website (e.g., advertising, interactive content, and analytics).</p>
+        
+        <h3 class="subsection-title">How We Use Cookies</h3>
+        <p>We use both session and persistent cookies for the purposes set out below:</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Type of Cookie</th>
+                    <th>Purpose</th>
+                    <th>Duration</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Essential / Necessary Cookies</strong></td>
+                    <td>These cookies are essential to provide you with services available through our Website and to enable you to use some of its features. They help authenticate users and prevent fraudulent use of user accounts.</td>
+                    <td>Session or Persistent</td>
+                </tr>
+                <tr>
+                    <td><strong>Functionality Cookies</strong></td>
+                    <td>These cookies allow our Website to remember choices you make when you use our Website. The purpose of these cookies is to provide you with a more personal experience and to avoid you having to re-enter your preferences every time you use the Website.</td>
+                    <td>Persistent</td>
+                </tr>
+                <tr>
+                    <td><strong>Analytics and Performance Cookies</strong></td>
+                    <td>These cookies are used to collect information about traffic to our Website and how users use our Website. The information gathered does not identify any individual visitor.</td>
+                    <td>Persistent</td>
+                </tr>
+                <tr>
+                    <td><strong>Advertising Cookies</strong></td>
+                    <td>These cookies are used to deliver advertisements that are relevant to you and your interests. They are also used to limit the number of times you see an advertisement and help measure the effectiveness of advertising campaigns.</td>
+                    <td>Persistent</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3 class="subsection-title">Your Choices Regarding Cookies</h3>
+        <p>If you prefer to avoid the use of cookies on the Website, you can disable cookies in your browser settings. Please note that if you disable cookies, some parts of our Website may not function properly.</p>
+        
+        <p>You can learn more about cookies and how to manage them at <a href="https://www.allaboutcookies.org" target="_blank">AllAboutCookies.org</a>.</p>
+        
+        <h3 class="subsection-title">Third-Party Cookies</h3>
+        <p>In addition to our own cookies, we may also use various third-party cookies to report usage statistics of the Website, deliver advertisements on and through the Website, and so on.</p>
+        
+        <p>Some specific third-party cookies we use include:</p>
+        <ul>
+            <li><strong>Google Analytics:</strong> For understanding how visitors engage with our Website</li>
+            <li><strong>Facebook Pixel:</strong> For measuring the effectiveness of our advertising</li>
+            <li><strong>Pinterest Tag:</strong> For tracking conversions from Pinterest ads</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container contact-section" id="contact">
+        <h2>Questions About Our Policies?</h2>
+        <p>If you have any questions about our Terms of Service, Privacy Policy, or Cookies Policy, please don't hesitate to contact us. We're here to help clarify any concerns you might have.</p>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <strong>Email Us</strong>
+                    <p>privacy@greengourmet.com</p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <strong>Call Us</strong>
+                    <p>(555) 123-4567</p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <strong>Visit Us</strong>
+                    <p>123 Sustainable Street, Greenville, CA 90210</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Green Gourmet</h3>
+                    <p>Indulgent Flavor Atelier - Where sustainability meets culinary artistry. Join us in redefining green cooking with over 87,000 words of original recipe content.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#cookies">Cookies Policy</a></li>
+                        <li><a href="#">Disclosure Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#recipes">All Recipes</a></li>
+                        <li><a href="index.html#categories">Recipe Categories</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to receive seasonal recipes and sustainability tips.</p>
+                    <form class="newsletter-form" style="display: flex; margin-top: 15px;">
+                        <input type="email" placeholder="Your email" style="padding: 10px; border-radius: 5px; border: none; flex: 1;">
+                        <button type="submit" style="background: var(--accent-gold); border: none; color: white; padding: 10px 15px; border-radius: 5px; margin-left: 5px; cursor: pointer;">→</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Green Gourmet | Indulgent Flavor Atelier. All rights reserved. | Over 87,000 words of unique recipe content</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
+                mainNav.classList.remove('active');
+            }
+        });
+        
+        // Policy navigation scrolling
+        const policyLinks = document.querySelectorAll('.policy-nav a');
+        
+        policyLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                policyLinks.forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Get target section
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                // Scroll to section
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Highlight current section while scrolling
+        const sections = document.querySelectorAll('.policy-content');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            policyLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Form submission
+        const newsletterForm = document.querySelector('footer .newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                if (emailInput.value) {
+                    alert('Thank you for subscribing to our newsletter!');
+                    emailInput.value = '';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

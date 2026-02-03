@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies Policy | Green Gourmet | Indulgent Flavor Atelier</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-green: #2e7d32;
+            --light-green: #4caf50;
+            --dark-green: #1b5e20;
+            --pale-green: #e8f5e9;
+            --accent-gold: #ffb300;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --off-white: #f9f9f9;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            background-color: var(--off-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-green);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo i {
+            font-size: 2.2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary-green);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-green);
+            left: 0;
+            bottom: 0;
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .search-cart {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-cart i {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .search-cart i:hover {
+            color: var(--primary-green);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-green);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(46, 125, 50, 0.85), rgba(46, 125, 50, 0.9)), url('https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Content Section */
+        .content-section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            color: var(--dark-green);
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent-gold);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .content-container {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 50px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        .content-intro {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Policy Content */
+        .policy-section {
+            margin-bottom: 40px;
+        }
+
+        .policy-section h2 {
+            color: var(--dark-green);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--pale-green);
+        }
+
+        .policy-section p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .policy-section ul {
+            margin-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        .policy-section ul li {
+            margin-bottom: 12px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .policy-section ul li strong {
+            color: var(--dark-green);
+        }
+
+        .cookies-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .cookies-table th {
+            background-color: var(--dark-green);
+            color: var(--white);
+            text-align: left;
+            padding: 18px 20px;
+            font-weight: 600;
+        }
+
+        .cookies-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #eee;
+            color: var(--text-light);
+        }
+
+        .cookies-table tr:nth-child(even) {
+            background-color: var(--pale-green);
+        }
+
+        .cookies-table tr:hover {
+            background-color: rgba(46, 125, 50, 0.05);
+        }
+
+        .cookies-table .cookie-purpose {
+            font-style: italic;
+            color: var(--primary-green);
+            font-size: 0.95rem;
+            margin-top: 5px;
+        }
+
+        /* Cookie Preference Center */
+        .preference-center {
+            background-color: var(--pale-green);
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 40px;
+            border-left: 5px solid var(--accent-gold);
+        }
+
+        .preference-center h3 {
+            color: var(--dark-green);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .preference-options {
+            margin: 25px 0;
+        }
+
+        .preference-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: var(--white);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+        }
+
+        .cookie-type {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cookie-type i {
+            font-size: 1.5rem;
+            color: var(--primary-green);
+        }
+
+        .cookie-toggle {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+
+        .cookie-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .cookie-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .cookie-slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .cookie-slider {
+            background-color: var(--primary-green);
+        }
+
+        input:checked + .cookie-slider:before {
+            transform: translateX(30px);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: var(--white);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #ffa000;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-block {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 80px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: var(--pale-green);
+        }
+
+        .faq-question h3 {
+            color: var(--dark-green);
+            font-size: 1.3rem;
+        }
+
+        .faq-question i {
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s;
+        }
+
+        .faq-answer p {
+            color: var(--text-light);
+            padding-bottom: 25px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 70px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-gold);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        .contact-info-footer p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sweet-dishes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .sweet-dish-img {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 120px;
+        }
+
+        .sweet-dish-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .sweet-dish-img:hover img {
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .search-cart {
+                margin-left: auto;
+                margin-right: 20px;
+            }
+            
+            .content-container {
+                padding: 30px;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cookies-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sweet-dishes {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .page-header {
+                padding: 60px 0;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .page-header p {
+                font-size: 1.1rem;
+            }
+            
+            .preference-option {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .cookie-toggle {
+                align-self: flex-end;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>Green Gourmet</span>
+            </div>
+            
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms Of Privacy</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="cookies.html" class="active">Cookies Policy</a></li>
+                </ul>
+            </nav>
+            
+            <div class="search-cart">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-shopping-basket"></i>
+                <div class="mobile-menu-btn" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Cookies Policy</h1>
+            <p>Learn how Green Gourmet uses cookies and similar technologies to enhance your browsing experience, analyze site traffic, and personalize content.</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Our Cookie Policy</h2>
+            
+            <div class="content-container">
+                <div class="content-intro">
+                    <p>At Green Gourmet, we believe in transparency about how we collect and use data. This Cookies Policy explains what cookies are, how we use them, the types of cookies we use, and how you can manage your cookie preferences.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>What Are Cookies?</h2>
+                    <p>Cookies are small text files that are placed on your device (computer, tablet, or mobile) when you visit a website. They are widely used to make websites work more efficiently and provide information to the website owners.</p>
+                    <p>Cookies can be "persistent" or "session" cookies. Persistent cookies remain on your device when you go offline, while session cookies are deleted as soon as you close your web browser.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>How We Use Cookies</h2>
+                    <p>Green Gourmet uses cookies for several purposes:</p>
+                    <ul>
+                        <li><strong>Essential Cookies:</strong> These are necessary for the website to function and cannot be switched off in our systems.</li>
+                        <li><strong>Performance Cookies:</strong> These allow us to count visits and traffic sources so we can measure and improve the performance of our site.</li>
+                        <li><strong>Functional Cookies:</strong> These enable the website to provide enhanced functionality and personalization.</li>
+                        <li><strong>Targeting Cookies:</strong> These may be set through our site by our advertising partners to build a profile of your interests.</li>
+                    </ul>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>Types of Cookies We Use</h2>
+                    <p>Below is a detailed list of the cookies we use on Green Gourmet:</p>
+                    
+                    <table class="cookies-table">
+                        <thead>
+                            <tr>
+                                <th>Cookie Name</th>
+                                <th>Type</th>
+                                <th>Purpose</th>
+                                <th>Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>session_id</strong>
+                                    <div class="cookie-purpose">Essential</div>
+                                </td>
+                                <td>Session Cookie</td>
+                                <td>Maintains your session while browsing our website</td>
+                                <td>Session</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>gg_consent</strong>
+                                    <div class="cookie-purpose">Functional</div>
+                                </td>
+                                <td>Persistent Cookie</td>
+                                <td>Stores your cookie consent preferences</td>
+                                <td>1 year</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>gg_recipe_prefs</strong>
+                                    <div class="cookie-purpose">Functional</div>
+                                </td>
+                                <td>Persistent Cookie</td>
+                                <td>Remembers your recipe preferences and dietary restrictions</td>
+                                <td>6 months</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>_ga</strong>
+                                    <div class="cookie-purpose">Analytics</div>
+                                </td>
+                                <td>Persistent Cookie</td>
+                                <td>Google Analytics cookie used to distinguish users</td>
+                                <td>2 years</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>_gid</strong>
+                                    <div class="cookie-purpose">Analytics</div>
+                                </td>
+                                <td>Persistent Cookie</td>
+                                <td>Google Analytics cookie used to distinguish users</td>
+                                <td>24 hours</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>_fbp</strong>
+                                    <div class="cookie-purpose">Marketing</div>
+                                </td>
+                                <td>Persistent Cookie</td>
+                                <td>Facebook pixel cookie used for tracking conversions</td>
+                                <td>3 months</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>Third-Party Cookies</h2>
+                    <p>In addition to our own cookies, we may also use various third-party cookies to report usage statistics of the website, deliver advertisements on and through the website, and so on. These include:</p>
+                    <ul>
+                        <li><strong>Google Analytics:</strong> To understand how visitors interact with our website</li>
+                        <li><strong>Social Media Platforms:</strong> For social sharing functionality and personalized advertising</li>
+                        <li><strong>Advertising Partners:</strong> To show you relevant ads for cooking products and services</li>
+                        <li><strong>Embedded Content:</strong> For videos, maps, and other content from third-party sites</li>
+                    </ul>
+                </div>
+                
+                <div class="preference-center">
+                    <h3>Cookie Preferences</h3>
+                    <p>You can manage your cookie preferences below. Essential cookies cannot be disabled as they are necessary for the website to function properly.</p>
+                    
+                    <div class="preference-options">
+                        <div class="preference-option">
+                            <div class="cookie-type">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <div>
+                                    <h4>Essential Cookies</h4>
+                                    <p>Required for basic site functionality</p>
+                                </div>
+                            </div>
+                            <label class="cookie-toggle">
+                                <input type="checkbox" checked disabled>
+                                <span class="cookie-slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="preference-option">
+                            <div class="cookie-type">
+                                <i class="fas fa-chart-line"></i>
+                                <div>
+                                    <h4>Performance Cookies</h4>
+                                    <p>Help us improve website performance</p>
+                                </div>
+                            </div>
+                            <label class="cookie-toggle">
+                                <input type="checkbox" id="performance-toggle" checked>
+                                <span class="cookie-slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="preference-option">
+                            <div class="cookie-type">
+                                <i class="fas fa-cogs"></i>
+                                <div>
+                                    <h4>Functional Cookies</h4>
+                                    <p>Enable enhanced features and personalization</p>
+                                </div>
+                            </div>
+                            <label class="cookie-toggle">
+                                <input type="checkbox" id="functional-toggle" checked>
+                                <span class="cookie-slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="preference-option">
+                            <div class="cookie-type">
+                                <i class="fas fa-bullseye"></i>
+                                <div>
+                                    <h4>Targeting Cookies</h4>
+                                    <p>Used for advertising and personalization</p>
+                                </div>
+                            </div>
+                            <label class="cookie-toggle">
+                                <input type="checkbox" id="targeting-toggle">
+                                <span class="cookie-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button id="save-preferences" class="btn btn-block">Save Cookie Preferences</button>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>Managing Cookies</h2>
+                    <p>You can control and/or delete cookies as you wish. You can delete all cookies that are already on your computer and you can set most browsers to prevent them from being placed. However, if you do this, you may have to manually adjust some preferences every time you visit a site and some services and functionalities may not work.</p>
+                    <p>To manage cookies in your browser:</p>
+                    <ul>
+                        <li><strong>Chrome:</strong> Settings > Privacy and security > Cookies and other site data</li>
+                        <li><strong>Firefox:</strong> Options > Privacy & Security > Cookies and Site Data</li>
+                        <li><strong>Safari:</strong> Preferences > Privacy > Cookies and website data</li>
+                        <li><strong>Edge:</strong> Settings > Cookies and site permissions > Cookies and site data</li>
+                    </ul>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>Changes to This Policy</h2>
+                    <p>We may update our Cookies Policy from time to time. We will notify you of any changes by posting the new Cookies Policy on this page and updating the "Last Updated" date. You are advised to review this Cookies Policy periodically for any changes.</p>
+                    <p><strong>Last Updated:</strong> October 26, 2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Cookies FAQ</h2>
+            <div class="faq-container">
+                <div class="faq-item" id="faq1">
+                    <div class="faq-question">
+                        <h3>What happens if I disable all cookies?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>If you disable all cookies, some features of Green Gourmet may not function properly. You may not be able to save recipe preferences, maintain a shopping list, or have personalized recipe recommendations. Essential functions like browsing recipes will still work.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" id="faq2">
+                    <div class="faq-question">
+                        <h3>Do you use cookies to track my personal information?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We use cookies to collect anonymized data about how you interact with our website. This helps us improve the user experience. We do not use cookies to collect personally identifiable information without your consent. For more details, please refer to our <a href="privacy.html">Privacy Policy</a>.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" id="faq3">
+                    <div class="faq-question">
+                        <h3>How often should I clear my cookies?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>There's no specific timeline for clearing cookies. However, clearing cookies periodically can help maintain your privacy and ensure you have the most up-to-date website experience. Some users prefer to clear cookies monthly, while others only do so when experiencing website issues.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" id="faq4">
+                    <div class="faq-question">
+                        <h3>Can I use Green Gourmet without accepting cookies?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, you can browse our recipe collection without accepting non-essential cookies. However, some features like saving favorites, personalized recommendations, and shopping list functionality will be limited. Essential cookies are required for basic site operation.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" id="faq5">
+                    <div class="faq-question">
+                        <h3>Do your cookies contain allergens or dietary information?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, our cookies are digital text files and do not contain any physical ingredients or allergens. However, we may store your dietary preferences (like gluten-free or vegan) in cookies to personalize your recipe browsing experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Green Gourmet</h3>
+                    <p>Indulgent Flavor Atelier - Where sustainability meets culinary artistry. Join us in redefining green cooking with over 87,000 words of original recipe content.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info-footer">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Sustainable Street, Greenville, CA 90210</p>
+                        <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> hello@greengourmet.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9am-6pm PST</p>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#recipes">All Recipes</a></li>
+                        <li><a href="index.html#categories">Recipe Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="cookies.html">Cookies Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Sweet Indulgences</h3>
+                    <p>Our best sweet dish creations:</p>
+                    <div class="sweet-dishes">
+                        <div class="sweet-dish-img">
+                            <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Matcha Cheesecake">
+                        </div>
+                        <div class="sweet-dish-img">
+                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Berry Tart">
+                        </div>
+                        <div class="sweet-dish-img">
+                            <img src="https://images.unsplash.com/photo-1519861531473-920034658307?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Chocolate Avocado Mousse">
+                        </div>
+                        <div class="sweet-dish-img">
+                            <img src="https://images.unsplash.com/photo-1519676867240-f03562e64548?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Pistachio Rose Cake">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Green Gourmet | Indulgent Flavor Atelier. All rights reserved. | Over 87,000 words of unique recipe content</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
+                mainNav.classList.remove('active');
+            }
+        });
+        
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Cookie Preference Management
+        const savePreferencesBtn = document.getElementById('save-preferences');
+        const performanceToggle = document.getElementById('performance-toggle');
+        const functionalToggle = document.getElementById('functional-toggle');
+        const targetingToggle = document.getElementById('targeting-toggle');
+        
+        // Load saved preferences from localStorage
+        function loadCookiePreferences() {
+            const savedPerformance = localStorage.getItem('gg_performance_cookies');
+            const savedFunctional = localStorage.getItem('gg_functional_cookies');
+            const savedTargeting = localStorage.getItem('gg_targeting_cookies');
+            
+            if (savedPerformance !== null) {
+                performanceToggle.checked = savedPerformance === 'true';
+            }
+            
+            if (savedFunctional !== null) {
+                functionalToggle.checked = savedFunctional === 'true';
+            }
+            
+            if (savedTargeting !== null) {
+                targetingToggle.checked = savedTargeting === 'true';
+            }
+        }
+        
+        // Save preferences to localStorage
+        savePreferencesBtn.addEventListener('click', () => {
+            localStorage.setItem('gg_performance_cookies', performanceToggle.checked);
+            localStorage.setItem('gg_functional_cookies', functionalToggle.checked);
+            localStorage.setItem('gg_targeting_cookies', targetingToggle.checked);
+            
+            // Also set a cookie to remember consent
+            document.cookie = `gg_consent=true; max-age=${365*24*60*60}; path=/`;
+            
+            // Show success message
+            alert('Your cookie preferences have been saved! They will be applied on your next visit.');
+        });
+        
+        // Initialize preferences on page load
+        loadCookiePreferences();
+        
+        // Highlight active navigation link
+        const currentPage = window.location.pathname.split('/').pop();
+        const navLinks = document.querySelectorAll('nav a');
+        
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
